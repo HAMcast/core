@@ -46,8 +46,8 @@ if (HAMCAST_LITE)
          ../modules/tunnel/src/tunnel_message.cpp)
     include_directories ( ./include/
                          ${OPENSSL_INCLUDE_DIR} 
+                         ${CHIMERA_INCLUDE}
                          ${CMAKE_CURRENT_SOURCE_DIR}/../modules/ipm/include/
-                         ${CMAKE_CURRENT_SOURCE_DIR}/../utils/chimera/include/
                          ${CMAKE_CURRENT_SOURCE_DIR}/../modules/scribe/include/
                          ${CMAKE_CURRENT_SOURCE_DIR}/../modules/void/
                          ${CMAKE_CURRENT_SOURCE_DIR}/../modules/tunnel/src/ )

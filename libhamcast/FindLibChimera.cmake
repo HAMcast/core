@@ -47,9 +47,9 @@ else (CHIMERA_LIBRARY AND CHIMERA_INCLUDE)
       ${CHIMERA_LIBRARY_PATH}/.libs
       ${CMAKE_LIBRARY_PATH}
       ${CMAKE_INSTALL_PREFIX}/lib
-      ../chimera/build
-      ../../chimera/build
-      ../../../chimera/build
+      ../modules/util/chimera/build
+      ../../modules/util/chimera/build
+      ../../../modules/util/chimera/build
       ../utils/chimera/build
       ../../utils/chimera/build
       ../../../utils/chimera/build
