@@ -5,8 +5,7 @@ project (hamcast_middleware)
 set (CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR})
 
 if (CMAKE_BUILD_TYPE STREQUAL Debug)
-    #set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -stdlib=libc++ -std=c++11 -DHC_ENABLE_LOGGING -g -Wextra -Wall -pedantic")
-    set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -stdlib=libc++ -std=c++11 -g -Wextra -Wall -pedantic")
+    set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -stdlib=libc++ -std=c++11 -DHC_ENABLE_LOGGING -g -Wextra -Wall -pedantic")
 ### exchange these lines if compiling on planetlab or other x86 systems
 #    set (CMAKE_CXX_FLAGS "-DHC_ENABLE_LOGGING -Wextra -Wall -pedantic -march=i486")
 else ()

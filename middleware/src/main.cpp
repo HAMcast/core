@@ -381,9 +381,15 @@ void remove_file(const std::string& cfile)
         if (unlink(cfile.c_str()) != 0)
         {
             cerr << "could not remove "
-                 << meeting_point << config_filename
+                 << cfile
                  << endl;
         }
+    }
+    else
+    {
+        cerr << "file not exists "
+             << cfile
+             << endl;
     }
 }
 
@@ -511,22 +517,22 @@ void create_file(const std::string& filename, bool throw_if_file_exists = false)
 
 int try_middleware_lock() // returns the lock's descriptor on success
 {
- if (middleware_lock<0 && errno==EEXIST)
- {
- // the file already exist; another process is
- // holding the lock
- cout<<"the file is currently locked; try again later";
- return -1;
- }
- else if (middleware_lock < 0)
- {
- // perror() appends a verbal description of the current
- // errno value after the user-supplied string
- perror("locking failed for the following reason");
- return -1;
- }
- // if we got here, we own the lock
- return middleware_lock;
+    if (middleware_lock<0 && errno==EEXIST)
+    {
+        // the file already exist; another process is
+        // holding the lock
+        cout<<"the file is currently locked; try again later";
+        return -1;
+    }
+    else if (middleware_lock < 0)
+    {
+        // perror() appends a verbal description of the current
+        // errno value after the user-supplied string
+        perror("locking failed for the following reason");
+        return -1;
+    }
+    // if we got here, we own the lock
+    return middleware_lock;
 }
 
 void initialize()

@@ -115,18 +115,15 @@ void config_map::read_ini(const string& filename)
     rx_handler_t rx_handler;
     // INI section
     push_back(rx_handler,
-              std::regex("^\\[([-a-zA-Z0-9\\._]+)\\]\\s*(?:;.*)?$",
-                         std::regex_constants::extended | std::regex_constants::nosubs),
+              std::regex("^\\[([-a-zA-Z0-9\\._]+)\\]\\s*(?:;.*)?$"),
               new_section);
     // INI value
     push_back(rx_handler,
-              std::regex("^([-a-zA-Z0-9\\._]+)\\s*=\\s*([-a-zA-Z0-9\\._/]+)\\s*(?:;.*)?$",
-                         std::regex_constants::extended | std::regex_constants::nosubs),
+              std::regex("^([-a-zA-Z0-9\\._]+)\\s*=\\s*([-a-zA-Z0-9\\._/]+)\\s*(?:;.*)?$"),
               add_key_value_pair);
     // INI string value
     push_back(rx_handler,
-              std::regex("^([-a-zA-Z0-9\\._]+)\\s*=\\s*\"([^\"]+)\"\\s*(?:;.*)?$",
-                         std::regex_constants::extended | std::regex_constants::nosubs),
+              std::regex("^([-a-zA-Z0-9\\._]+)\\s*=\\s*\"([^\"]+)\"\\s*(?:;.*)?$"),
               add_key_value_pair);
     int line_count = 0;
     string line;

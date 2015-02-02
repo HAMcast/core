@@ -2,8 +2,7 @@ cmake_minimum_required(VERSION 2.6)
 project (hamcast)
 
 if (CMAKE_BUILD_TYPE STREQUAL Debug)
-    #set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -DHC_ENABLE_LOGGING -g -Wextra -Wall -Wno-c++11-long-long -Wno-unused-parameter -Wno-unused-function -Wno-unused-parameter")
-    set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g -Wextra -Wall -Wno-c++11-long-long -Wno-unused-parameter -Wno-unused-function -Wno-unused-parameter")
+    set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -DHC_ENABLE_LOGGING -g -Wextra -Wall -Wno-c++11-long-long -Wno-unused-parameter -Wno-unused-function -Wno-unused-parameter")
 ### exchange these lines if compiling on planetlab or other x86 systems
 #    set (CMAKE_CXX_FLAGS "-00 -DHC_ENABLE_LOGGING -Wextra -Wall -pedantic -march=i486")
 else ()

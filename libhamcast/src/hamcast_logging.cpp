@@ -28,6 +28,7 @@
 #include <fstream>
 #include <thread>
 #include <mutex>
+#include <memory>
 
 #include "hamcast/hamcast_logging.h"
 
@@ -106,7 +107,7 @@ class logger
 
 };
 
-logger m_logger;
+std::shared_ptr<logger> m_logger;
 
 logger& thread_logger()
 {
