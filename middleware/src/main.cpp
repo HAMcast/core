@@ -233,7 +233,7 @@ void set_log_level(int lvl)
     }
 }
 
-int middleware_lock;//(lock_file.c_str());
+static int middleware_lock;//(lock_file.c_str());
 
 int run_middleware(const std::string& ini_file)
 {
@@ -407,7 +407,8 @@ void cleanup()
     // remove lock file
     cfile = path;
     cfile += lock_filename;
-    remove_file(cfile);
+    //remove_file(cfile);
+    remove(cfile.c_str());
     erase_trailing_slash(path);
     while (path.size() > root.size())
     {
@@ -517,7 +518,7 @@ void create_file(const std::string& filename, bool throw_if_file_exists = false)
 
 int try_middleware_lock() // returns the lock's descriptor on success
 {
-    if (middleware_lock<0 && errno==EEXIST)
+    if (middleware_lock < 0 && errno==EEXIST)
     {
         // the file already exist; another process is
         // holding the lock
@@ -574,11 +575,15 @@ void initialize()
     fname = path;
     fname += lock_filename;
     //create_file(fname, true);
-    // get file lock
     middleware_lock = open(fname.c_str(), O_WRONLY | O_CREAT | O_EXCL);
     if (try_middleware_lock() < 0)
     {
         throw std::runtime_error("Could not get interprocess file lock");
+    }
+    else
+    {
+        std::string lock_string = "locked";
+        write(middleware_lock,lock_string.c_str(),sizeof(lock_string.c_str()));
     }
 }
 
