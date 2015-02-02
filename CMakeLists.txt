@@ -49,3 +49,4 @@ endif ()
 
 add_subdirectory (libhamcast)
 add_subdirectory (middleware)
+add_subdirectory (modules/loopback)
