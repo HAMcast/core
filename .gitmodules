@@ -1,0 +1,3 @@
+[submodule "modules/void"]
+	path = modules/void
+	url = https://github.com/HAMcast/modules_void.git
