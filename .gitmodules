@@ -1,3 +1,6 @@
 [submodule "modules/void"]
 	path = modules/void
 	url = https://github.com/HAMcast/modules_void.git
+[submodule "modules/tunnel"]
+	path = modules/tunnel
+	url = https://github.com/HAMcast/modules_tunnel.git
