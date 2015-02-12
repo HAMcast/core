@@ -7,3 +7,6 @@
 [submodule "modules/utils"]
 	path = modules/utils
 	url = https://github.com/HAMcast/modules_utils.git
+[submodule "modules/scribe"]
+	path = modules/scribe
+	url = https://github.com/HAMcast/modules_scribe.git
