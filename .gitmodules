@@ -10,3 +10,6 @@
 [submodule "modules/scribe"]
 	path = modules/scribe
 	url = https://github.com/HAMcast/modules_scribe.git
+[submodule "modules/ip"]
+	path = modules/ip
+	url = https://github.com/HAMcast/modules_ip.git

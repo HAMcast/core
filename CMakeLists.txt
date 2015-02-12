@@ -53,6 +53,8 @@ add_subdirectory (libhamcast)
 add_subdirectory (middleware)
 add_dependencies (middleware libhamcast)
 
+add_subdirectory (modules/ip)
+add_dependencies (libipmodule libhamcast)
 add_subdirectory (modules/loopback)
 add_dependencies (libloopbackmodule libhamcast)
 add_subdirectory (modules/scribe)
