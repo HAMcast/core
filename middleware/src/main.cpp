@@ -407,7 +407,6 @@ void cleanup()
     // remove lock file
     cfile = path;
     cfile += lock_filename;
-    //remove_file(cfile);
     remove(cfile.c_str());
     erase_trailing_slash(path);
     while (path.size() > root.size())
@@ -560,7 +559,7 @@ void initialize()
             cout << "created directory " << sub << endl;
             break;
          case cr_exist:
-            cout << "direcory " << sub << " already exists" << endl;
+            cout << "directory " << sub << " already exists" << endl;
             break;
          case cr_failure:
             cerr << "failure during creation of directory " << sub << endl;
@@ -615,10 +614,10 @@ void help (const std::string& program)
     cout << "\t-h, --help" << endl;
     cout << "\t\tPrint this help screen." << endl;
     cout << "\t-i, --ini-file INI" << endl;
-    cout << "\t\tSet name and path of INI file with middleware configuration (middleware.ini)." << endl;
+    cout << "\t\tSet name and path of INI file with middleware configuration (Default: middleware.ini)." << endl;
     cout << endl;
     cout << "NOTES" << endl;
-    cout << "\tIf INI exists in run path of middleware, no arguments are needed." << endl;
+    cout << "\tIf 'middleware.ini' exists in run path of middleware, no arguments are needed." << endl;
     cout << endl;
     cout << "AUTHORS" << endl;
     cout << "\tDominik Charousset <dominik.charousset (at) haw-hamburg.de>" << endl;
